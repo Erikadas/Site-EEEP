@@ -1,0 +1,76 @@
+:root {
+    --tom-verde: rgb(29, 172, 29);
+    --tom-laranja: rgb(189, 88, 0);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: system-ui;
+}
+
+.img {
+    background-image: linear-gradient(to bottom, transparent 0%, var(--tom-verde) 75%), url(img-eeep.jpg);
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    padding: 0 30px 10px 30px;
+    border-bottom: double 5px var(--tom-laranja);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--tom-verde);
+    color: white;
+}
+
+header img {
+    width: 50px;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 0 10px;
+    border-radius: 20px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a:hover {
+    background-color: var(--tom-laranja);
+    box-shadow: 2px 2px 2px black;
+    transition: 70ms ease-in;
+    transform: scale(1.2);
+}
+
+.login {
+    margin-left: 10px;
+    background-color: var(--tom-laranja);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    p, a{
+        margin: 10px;
+    }
+}
+
+.carousel {
+    width: 100%; 
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    
+}
