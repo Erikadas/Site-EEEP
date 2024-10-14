@@ -9,6 +9,7 @@
 <body>
     <div class="container">
         <h2>Login</h2>
+        
         <form action="/login" method="POST">
             <label for="username">Nome de Usuário:</label>
             <input type="text" id="username" name="username" required>
@@ -19,8 +20,19 @@
             <button type="submit">Entrar</button>
         </form>
         
-        <p>Não tem uma conta? <a href="login-app/views/registro.html">Registre-se</a></p>
+        <p>Não tem uma conta? <a href="/register">Registre-se</a></p>
 
+        <!-- Seção para mensagens de erro -->
+        <div id="error-message" style="color: red;"></div>
     </div>
+
+    <script>
+        // Exemplo de como você pode exibir uma mensagem de erro, se necessário
+        const params = new URLSearchParams(window.location.search);
+        if (params.has('error')) {
+            const errorMessage = params.get('error');
+            document.getElementById('error-message').innerText = errorMessage;
+        }
+    </script>
 </body>
 </html>

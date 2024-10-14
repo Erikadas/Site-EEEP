@@ -34,11 +34,17 @@ router.post('/register', async (req, res) => {
         });
 
         await user.save();
-        res.status(201).send('Usuário registrado com sucesso');
+        // Redirecionar para a página de login após o registro bem-sucedido
+        res.redirect('/login'); // Redireciona para a rota de login
     } catch (error) {
         console.error(error); // Adicione isso para ver o erro no console
         res.status(500).send('Erro no servidor');
     }
+});
+
+// Rota GET para a página de login
+router.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, '../views/login.html')); // Ajuste o caminho se necessário
 });
 
 module.exports = router;
